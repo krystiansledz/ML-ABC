@@ -1,0 +1,29 @@
+[tool.black]
+line-length = 100
+
+[tool.isort]
+profile = "black"
+skip = "__init__.py"
+
+[tool.mypy]
+check_untyped_defs = true
+disallow_untyped_calls = true
+disallow_untyped_decorators = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+plugins = [ "numpy.typing.mypy_plugin" ]
+pretty = true
+show_column_numbers = true
+
+[tool.pylint]
+max-line-length = 100
+disable = [
+    "C0103",  # not snake_case naming style
+    "C0114",  # missing module docstring
+    "C0115",  # missing class docstring
+    "C0116",  # missing method docstring
+    "R0902",  # too many instance attributes
+    "R0903",  # too few public methods
+    "W0102"   # dangerous default value of an argument
+]
+ignore = ["__init__.py"]
